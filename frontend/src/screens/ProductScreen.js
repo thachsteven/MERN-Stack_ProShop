@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const ProductScreen = (props) => {
   const { id } = props.match.params;
+  const { history } = props;
   const dispatch = useDispatch();
   const [qty, setQty] = useState(1);
 
@@ -17,6 +18,10 @@ const ProductScreen = (props) => {
   useEffect(() => {
     dispatch(listProductDetails(id));
   }, [id, dispatch]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${id}?qty=${qty}`);
+  };
 
   return (
     <>
@@ -67,7 +72,9 @@ const ProductScreen = (props) => {
                 )}
 
                 <ListGroup.Item>
-                  <Button disabled={product.countInStock === 0}>ADD TO CART</Button>
+                  <Button onClick={addToCartHandler} disabled={product.countInStock === 0}>
+                    ADD TO CART
+                  </Button>
                 </ListGroup.Item>
               </ListGroup>
             </Card>
