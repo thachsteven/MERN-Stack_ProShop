@@ -7,7 +7,7 @@ import Message from '../components/Message';
 
 const CartScreen = (props) => {
   const dispatch = useDispatch();
-  const { match, location, history } = props;
+  const { location } = props;
   const productId = props.match.params.id;
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
 
