@@ -1,4 +1,5 @@
 import React from 'react';
+import { createBrowserHistory } from 'history';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -8,9 +9,10 @@ import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen';
 
+export const history = createBrowserHistory();
 const App = () => {
   return (
-    <Router>
+    <Router history={history}>
       <Header />
       <main>
         <Container>
