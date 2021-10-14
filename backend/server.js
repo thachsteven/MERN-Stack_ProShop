@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import colors from 'colors';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 dotenv.config();
 
@@ -14,15 +15,11 @@ app.get('/', (req, res) => {
   res.send('Api is running...');
 });
 
-// app.get('/api/products', (req, res) => {
-//   res.json(products);
-// });
-
-// app.get('/api/products/:id', (req, res) => {
-//   res.json(products.find((product) => product._id === req.params.id));
-// });
-
 app.use('/api/products', productRoutes);
+
+//middleware
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
