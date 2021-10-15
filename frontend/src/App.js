@@ -11,6 +11,7 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
 
 export const history = createBrowserHistory();
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/profile" exact component={ProfileScreen} />
           <Route path="/cart/:id?" exact component={CartScreen} />
           <Route path="/shipping" exact component={ShippingScreen} />
+          <Route path="/payment" exact component={PaymentScreen} />
           <Route path="/" exact component={HomeScreen} />
         </Container>
       </main>
