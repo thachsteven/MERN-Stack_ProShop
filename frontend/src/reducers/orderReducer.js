@@ -60,7 +60,7 @@ export const orderDetailsReducer = (state = initialState, action) => {
 };
 
 //Order paid
-export const orderPayReducer = (state = initialState, action) => {
+export const orderPayReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_PAY_REQUEST:
       return {
