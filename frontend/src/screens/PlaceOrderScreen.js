@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Card, Col, Image, ListGroup, Row } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { createOrder } from '../actions/orderActions';
 import Message from '../components/Message';
 
-const PlaceOrderScreen = () => {
+const PlaceOrderScreen = ({ history }) => {
+  const dispatch = useDispatch();
+
   const { cartItems, paymentMethod } = useSelector((state) => state.cart);
-  const { address, city, postalCode, country } = useSelector((state) => state.cart.shippingAddress);
+  const { order, success, error } = useSelector((state) => state.orderCreate);
+
+  const { shippingAddress } = useSelector((state) => state.cart);
+  const { address, city, postalCode, country } = shippingAddress;
 
   //   Calculate prices
   const addDecimals = (num) => {
@@ -18,8 +24,24 @@ const PlaceOrderScreen = () => {
   const taxPrice = addDecimals(Number((0.15 * itemsPrice).toFixed(2)));
   const totalPrice = (Number(itemsPrice) + Number(shippingPrice) + Number(taxPrice)).toFixed(2);
 
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+  }, [history, success, order]);
+
   const placeOrderHandler = () => {
-    console.log('order');
+    dispatch(
+      createOrder({
+        orderItems: cartItems,
+        shippingAddress: shippingAddress,
+        paymentMethod: paymentMethod,
+        itemsPrice: itemsPrice,
+        shippingPrice: shippingPrice,
+        taxPrice: taxPrice,
+        totalPrice: totalPrice,
+      })
+    );
   };
 
   return (
@@ -96,6 +118,7 @@ const PlaceOrderScreen = () => {
                 <Col>${totalPrice}</Col>
               </Row>
             </ListGroup.Item>
+            <ListGroup.Item>{error && <Message variant="danger">{error}</Message>}</ListGroup.Item>
             <ListGroup.Item>
               <Button onClick={placeOrderHandler} type="button" className="btn-block" disabled={cartItems === 0}>
                 Place Order
