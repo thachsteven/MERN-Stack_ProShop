@@ -10,6 +10,8 @@ import {
 const initialState = {
   orderItems: [],
   shippingAddress: {},
+  loading: true,
+  order: [],
 };
 
 //Create order
