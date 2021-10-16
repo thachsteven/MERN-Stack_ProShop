@@ -17,6 +17,7 @@ import OrderScreen from './screens/OrderScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 export const history = createBrowserHistory();
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/admin/userlist" exact component={UserListScreen} />
           <Route path="/admin/user/:id/edit" exact component={UserEditScreen} />
           <Route path="/admin/productlist" exact component={ProductListScreen} />
+          <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
           <Route path="/" exact component={HomeScreen} />
         </Container>
       </main>
