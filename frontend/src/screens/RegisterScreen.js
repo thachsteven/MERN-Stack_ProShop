@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import FormContainer from '../components/FormContainer';
@@ -17,13 +17,7 @@ const RegisterScreen = () => {
 
   const dispatch = useDispatch();
 
-  const { userInfo, loading, error } = useSelector((state) => state.userRegister);
-
-  useEffect(() => {
-    if (userInfo) {
-      history.goBack();
-    }
-  }, [userInfo]);
+  const { loading, error } = useSelector((state) => state.userRegister);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -31,6 +25,7 @@ const RegisterScreen = () => {
       setMessage('Password does not match');
     } else {
       dispatch(register(name, email, password));
+      history.push('/');
     }
   };
 

@@ -39,6 +39,7 @@ const LoginScreen = ({ history }) => {
         <Form.Group controlId="password">
           <Form.Label>Enter Password</Form.Label>
           <Form.Control
+            autoComplete="on"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
