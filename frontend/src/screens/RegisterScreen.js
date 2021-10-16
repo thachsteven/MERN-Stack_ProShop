@@ -6,9 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../actions/userActions';
 import Message from './../components/Message';
 import Loading from './../components/Loading/Loading';
-import { history } from './../App';
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ history }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
