@@ -15,6 +15,7 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
 
 export const history = createBrowserHistory();
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/placeorder" exact component={PlaceOrderScreen} />
           <Route path="/order/:id" exact component={OrderScreen} />
           <Route path="/admin/userlist" exact component={UserListScreen} />
+          <Route path="/admin/user/:id/edit" exact component={UserEditScreen} />
           <Route path="/" exact component={HomeScreen} />
         </Container>
       </main>
