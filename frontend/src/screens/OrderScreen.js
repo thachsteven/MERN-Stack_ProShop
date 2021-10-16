@@ -8,6 +8,7 @@ import Loading from './../components/Loading/Loading';
 import { PayPalButton } from 'react-paypal-button-v2';
 import axios from 'axios';
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../constants/orderConstants';
+import moment from 'moment';
 
 const OrderScreen = (props) => {
   const orderId = props.match.params.id;
@@ -94,7 +95,9 @@ const OrderScreen = (props) => {
                 {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
-                <Message variant="success">Delivered on {order.deliveredAt}</Message>
+                <Message variant="success">
+                  Delivered on {moment(order.deliveredAt).format('MMMM Do YYYY, h:mm:ss a')}
+                </Message>
               ) : (
                 <Message variant="danger">Not Delivered</Message>
               )}
@@ -107,7 +110,7 @@ const OrderScreen = (props) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Paid on {order.paidAt}</Message>
+                <Message variant="success">Paid on {moment(order.paidAt).format('MMMM Do YYYY, h:mm:ss a')}</Message>
               ) : (
                 <Message variant="danger">Not Paid</Message>
               )}
