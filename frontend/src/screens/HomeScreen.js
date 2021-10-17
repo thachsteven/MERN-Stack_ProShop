@@ -6,6 +6,8 @@ import { listProducts } from '../actions/productActions';
 import Message from './../components/Message';
 import Loading from '../components/Loading/Loading';
 import Paginate from '../components/Paginate';
+import ProductCarousel from '../components/ProductCarousel';
+import { Link } from 'react-router-dom';
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -21,6 +23,13 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link to="/" className="btn btn-light">
+          Go Back
+        </Link>
+      )}
       <h1 className="mt-3">Latest Products</h1>
       {loading ? (
         <Loading />
