@@ -3,7 +3,7 @@
 <h4>Back End: Nodejs, Express, Mongodb</h4>
 <h4>Source: https://github.com/thachsteven/MERN-Stack_ProShop</h4>
 
-<img src="./images/proshopreadme.png" alt="proshop" />
+<img src="https://i.ibb.co/D4Rch3x/proshopreadme.png" alt="proshop" />
 
 ## Features
 
@@ -23,6 +23,12 @@
 
 <hr/>
 <h2>Setting up development environment 🛠</h2>
+
+```
+git clone https://github.com/thachsteven/MERN-Stack_ProShop.git
+cd MERN-Stack_ProShop
+```
+
 ### Env Variables
 
 Create a .env file in then root and add the following
