@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, listUsers } from './../actions/userActions';
 import Message from './../components/Message';
 import Loading from './../components/Loading/Loading';
+import Meta from '../components/Meta';
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const UserListScreen = ({ history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <Table striped bordered hover responsive className="table-sm">
+          <Meta title="ProShop | Users" />
           <thead>
             <tr>
               <th>ID</th>

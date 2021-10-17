@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../actions/userActions';
 import Message from './../components/Message';
 import Loading from './../components/Loading/Loading';
+import Meta from '../components/Meta';
 
 const RegisterScreen = ({ history }) => {
   const [name, setName] = useState('');
@@ -30,6 +31,7 @@ const RegisterScreen = ({ history }) => {
 
   return (
     <FormContainer>
+      <Meta title="ProShop | Sign Up" />
       <h1>Sign Up</h1>
       {message && <Message>{message}</Message>}
       {error && <Message variant="danger">{error}</Message>}

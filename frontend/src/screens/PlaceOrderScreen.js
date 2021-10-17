@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createOrder } from '../actions/orderActions';
 import Message from '../components/Message';
+import Meta from '../components/Meta';
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   return (
     <Row>
+      <Meta title="ProShop | Place Order" />
       <Col md={8}>
         <ListGroup variant="flush">
           <ListGroup.Item>

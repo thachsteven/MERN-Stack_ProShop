@@ -7,6 +7,7 @@ import { createProduct, deleteProduct, listProducts } from '../actions/productAc
 import Loading from './../components/Loading/Loading';
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 import Paginate from '../components/Paginate';
+import Meta from '../components/Meta';
 
 const ProductListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
@@ -55,6 +56,7 @@ const ProductListScreen = ({ history, match }) => {
   return (
     <>
       <Row className="align-items-center">
+        <Meta title="ProShop | Products" />
         <Col>
           <h1>Products</h1>
         </Col>

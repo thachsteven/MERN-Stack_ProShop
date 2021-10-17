@@ -7,6 +7,7 @@ import Loading from './../components/Loading/Loading';
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 import { listMyOrders } from '../actions/orderActions';
 import { LinkContainer } from 'react-router-bootstrap';
+import Meta from '../components/Meta';
 
 const ProfileScreen = ({ history }) => {
   const [name, setName] = useState('');
@@ -50,6 +51,7 @@ const ProfileScreen = ({ history }) => {
 
   return (
     <Row>
+      <Meta title="ProShop | Profile" />
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}

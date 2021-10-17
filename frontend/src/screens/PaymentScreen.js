@@ -3,6 +3,7 @@ import { Button, Col, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../actions/cartActions';
 import FormContainer from '../components/FormContainer';
+import Meta from '../components/Meta';
 
 const PaymentScreen = ({ history }) => {
   const [paymentMethod, setPaymentMethod] = useState('PayPal');
@@ -21,6 +22,7 @@ const PaymentScreen = ({ history }) => {
 
   return (
     <FormContainer>
+      <Meta title="ProShop | Payment" />
       <h1>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>

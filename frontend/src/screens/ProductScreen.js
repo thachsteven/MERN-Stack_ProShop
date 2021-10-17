@@ -7,6 +7,7 @@ import Loading from './../components/Loading/Loading';
 import Message from './../components/Message';
 import { Link } from 'react-router-dom';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
+import Meta from '../components/Meta';
 
 const ProductScreen = (props) => {
   const { id } = props.match.params;
@@ -59,6 +60,7 @@ const ProductScreen = (props) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />

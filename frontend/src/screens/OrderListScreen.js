@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import { listOrders } from '../actions/orderActions';
 import Loading from './../components/Loading/Loading';
+import Meta from '../components/Meta';
 
 const OrderListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const OrderListScreen = ({ history }) => {
   return (
     <>
       <h1>Orders</h1>
+      <Meta title="ProShop | Orders" />
       {loading ? (
         <Loading />
       ) : error ? (

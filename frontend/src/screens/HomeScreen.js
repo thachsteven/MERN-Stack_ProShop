@@ -8,6 +8,7 @@ import Loading from '../components/Loading/Loading';
 import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 import { Link } from 'react-router-dom';
+import Meta from './../components/Meta';
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -23,6 +24,7 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      <Meta />
       {!keyword ? (
         <ProductCarousel />
       ) : (

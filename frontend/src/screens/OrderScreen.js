@@ -9,6 +9,7 @@ import { PayPalButton } from 'react-paypal-button-v2';
 import axios from 'axios';
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../constants/orderConstants';
 import moment from 'moment';
+import Meta from '../components/Meta';
 
 const OrderScreen = (props) => {
   const orderId = props.match.params.id;
@@ -78,6 +79,7 @@ const OrderScreen = (props) => {
   ) : (
     <>
       <h1>Order {order._id}</h1>
+      <Meta title="ProShop | Order" />
       <Row>
         <Col md={8}>
           <ListGroup variant="flush">

@@ -4,6 +4,7 @@ import FromContainer from '../components/FormContainer';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/userActions';
+import Meta from '../components/Meta';
 
 const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState('');
@@ -24,6 +25,7 @@ const LoginScreen = ({ history }) => {
 
   return (
     <FromContainer>
+      <Meta title="ProShop | Sign In" />
       <h1>Sign In</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
