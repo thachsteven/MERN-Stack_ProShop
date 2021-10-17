@@ -15,3 +15,8 @@ main {
 .steps-action {
   margin-top: 24px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
