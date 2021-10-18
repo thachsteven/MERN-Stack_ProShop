@@ -87,4 +87,3 @@ john@example.com (Customer)
 jane@example.com (Customer)
 1234
 
-<hr/>
