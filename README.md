@@ -2,6 +2,7 @@
 <h4>Front End: Reactjs</h4>
 <h4>Back End: Nodejs, Express, Mongodb</h4>
 <h4>Source: https://github.com/thachsteven/MERN-Stack_ProShop</h4>
+<h4>Live demo: https://proshop-ecommercee.herokuapp.com/ </h4>
 
 <img src="https://i.ibb.co/D4Rch3x/proshopreadme.png" alt="proshop" />
 
